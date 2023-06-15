@@ -1,0 +1,23 @@
+micronaut:
+  application:
+    name: punchsystem
+netty:
+  default:
+    allocator:
+      max-order: 3
+
+datasources:
+  default:
+    driver-class-name: org.postgresql.Driver
+    db-type: postgres
+    dialect: POSTGRES
+    url: jdbc:postgresql://${rds-url:`localhost:5432/managementsystem`}
+    username: ${rds-username:postgres}
+    password: ${rds-password:secret}
+    driverClassName: org.postgresql.Driver
+
+flyway:
+  datasources:
+    default:
+      enabled: true
+      baseline-on-migrate: true
