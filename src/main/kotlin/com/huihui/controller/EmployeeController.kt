@@ -20,10 +20,10 @@ class EmployeeController (private val employeeService: EmployeeService){
         return employeeService.getEmployeeById(employeeId)
     }
 
-//    @Put("/{employeeId}")
-//    fun updateEmployee(@PathVariable employeeId: UUID, @Body body: RegisterBody) {
-//        employeeService.updateEmployeeById(employeeId, body.email, body.firstName, body.lastName, body.role)
-//    }
+    @Put("/{employeeId}")
+    fun updateEmployee(@PathVariable employeeId: UUID, @Body employeeEntity: EmployeeEntity) {
+        employeeService.updateEmployeeById(employeeId, employeeEntity)
+    }
 
     @Delete("/{employeeId}")
     fun deleteEmployee(@PathVariable employeeId: UUID) {
