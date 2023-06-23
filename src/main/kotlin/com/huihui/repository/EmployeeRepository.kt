@@ -11,6 +11,7 @@ import java.util.*
 interface EmployeeRepository : CrudRepository<EmployeeEntity, UUID> {
     fun getEmployeeEntityById(employeeID: UUID): EmployeeEntity
     fun getEmployeeEntityByEmail(email: String): EmployeeEntity
+    fun updateEmployeeEntityById(employeeID: UUID, employeeEntity: EmployeeEntity) : EmployeeEntity
 
 //    @Override
 //    @Query("UPDATE employees SET email = :email, first_name = :firstName, last_name = :lastName, role = :role WHERE id = :employeeId")

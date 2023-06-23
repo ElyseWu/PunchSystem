@@ -37,9 +37,9 @@ class EmployeeService (private val employeeRepository: EmployeeRepository,
         return employeeRepository.getEmployeeEntityById(employeeId)
     }
 
-//    fun updateEmployeeById(employeeId: UUID, email: String, firstName: String, lastName: String, role: String) {
-//        employeeRepository.updateNameByEmail(employeeId, email, firstName, lastName, role)
-//    }
+    fun updateEmployeeById(employeeId: UUID, employeeEntity: EmployeeEntity) {
+        employeeRepository.updateEmployeeEntityById(employeeId, employeeEntity)
+    }
 
     fun deleteEmployee(employeeId: UUID) {
         //I need to change isActiveRepository
